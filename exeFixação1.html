@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de fixação</title>
+    <script>
+        /*
+            1) Crie uma aplicação para efetuar o cálculo do índice de massa corporal. 
+                Considere os seguintes critérios: 
+                1) Ao executar o script a aplicação deve solicitar a entrada do nome da pessoa. 
+                2) Na sequência a aplicação deve solicitar que seja informada a altura da pessoa em 
+                centímetros. 
+                3) Na sequência a aplicação deve solicitar que seja informado o peso da pessoa. 
+                4) Após as estradas de dados, atente-se a conversão das informações para dados do tipo 
+                float. 
+                5) Converta a altura recebida em centímetros para metros. (basta dividir a altura por 
+                100). 
+                6) Internamente a aplicação deve executar o cálculo do índice de massa corporal através 
+                da expressão: M = peso (quilos) ÷ altura² 
+                7) Após identificar o índice de massa corporal o sistema deverá classificar em faixas 
+                descritivas utilizando os critérios abaixo: 
+                a) Se M estiver abaixo de 16 : Baixo peso muito grave 
+                b) Se M estiver entre 16 e 16,99: Baixo peso grave 
+                c) Se M estiver entre 17 e 18,49: Baixo peso 
+                d) Se M estiver entre 18,50 e 24,99: Peso normal 
+                e) Se M estiver entre 25 e 29,99: Sobrepeso 
+                f) Se M estiver entre 30 e 34,99: Obesidade grau I 
+                g) Se M estiver entre 35 e 39,99: Obesidade grau II 
+                h) Se M for maior que 40: Obesidade grau III 
+                8) Ao término o sistema deve fornecer a seguinte saída para o usuário: 
+                “<Nome> possui índice de massa corporal igual a <m>, sendo classificado como: 
+                <classificacao>.” 
+                *As informações em vermelho são variáveis e devem ser substituídas pelos seus respectivos 
+                valores calculadas dentro da aplicação.
+        
+        */
+       
+                var nome = prompt ('Digite nome')
+                var altura = prompt ('Digite sua altura em centímetro')
+                var peso = prompt ('Digite seu peso')
+                var M = peso / (altura * altura)*10000 
+                M = parseFloat (M.toFixed(2))
+                peso = parseFloat(peso)
+                altura = parseFloat (altura/100)
+                var classificacao
+                
+
+                
+                
+                if(M < 16){ 
+                    classificacao = 'Baixo peso,muito grave .'
+                }
+                else if(M == 16 && M <16.99 ){
+                    classificacao = 'Baixo peso,grave'
+                }
+                else if(M == 17 && M < 18.49){
+                    classificacao = 'Baixo Peso'
+                }
+                else if(M > 18.50 && M < 24.99){
+                    classificacao = 'Peso normal'
+                }
+                else if(M > 25 && M < 29.99){
+                    classificacao = 'Sobrepeso'
+                }
+                else if(M > 30 && M < 34.99){
+                    classificacao = 'Obesidade grau I'
+                }
+                else if (M > 35 && M < 39.99){
+                    classificacao = 'Obesidade grau II'
+                }
+                else{
+                    classificacao = 'Obesidade grau III'
+                }
+
+                document.write (nome + ' possui índice de massa corporal igual a ' 
+                + M + ', sendo classificado como : ' + classificacao)
+
+                docDument.write('<br>')
+                
+                
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
